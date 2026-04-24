@@ -1,7 +1,7 @@
 export const cafeDetails = {
   name: "Rocky's Cafe",
   shortName: 'rockyscafe9',
-  logoPath: '/business_logo.jpg',
+  logoPath: 'business_logo.jpg',
   tagline: 'Coffee, comfort food, and event catering in one cozy place.',
   status: 'Open daily for dine-in, delivery, and pick-up.',
   address:
@@ -27,55 +27,55 @@ export const cafeDetails = {
 
 export const promotionalGallery = [
   {
-    src: '/promotional/486115866_17853757374408281_2940636247313788969_n.jpg',
+    src: 'promotional/486115866_17853757374408281_2940636247313788969_n.jpg',
     alt: "Rocky's Cafe mobile storefront with warm ambient lighting.",
   },
   {
-    src: '/promotional/image1.png',
+    src: 'promotional/image1.png',
     alt: "Iced coffee served on a wooden table at Rocky's Cafe.",
   },
   {
-    src: '/promotional/image2.png',
+    src: 'promotional/image2.png',
     alt: "A cozy rainy-day cafe view with a cup of coffee and laptop.",
   },
   {
-    src: '/promotional/image3.png',
+    src: 'promotional/image3.png',
     alt: "Hot coffee by the window during a rainy afternoon.",
   },
   {
-    src: '/promotional/image4.png',
+    src: 'promotional/image4.png',
     alt: "Cafe meal and colorful drinks in natural sunlight.",
   },
   {
-    src: '/promotional/525406070_17870436960408281_2595481149507586359_n.jpg',
+    src: 'promotional/525406070_17870436960408281_2595481149507586359_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/525426830_17870648532408281_7749963284520948670_n.jpg',
+    src: 'promotional/525426830_17870648532408281_7749963284520948670_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/537165315_17873720820408281_1248401490745586632_n.jpg',
+    src: 'promotional/537165315_17873720820408281_1248401490745586632_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/538394871_582991111446456_3642632471712537161_n.jpg',
+    src: 'promotional/538394871_582991111446456_3642632471712537161_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/541836187_17875477353408281_3579240171022396252_n.jpg',
+    src: 'promotional/541836187_17875477353408281_3579240171022396252_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/554313221_17878293657408281_4702316598849740188_n.jpg',
+    src: 'promotional/554313221_17878293657408281_4702316598849740188_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/556985230_17878417377408281_7902038721754815353_n.jpg',
+    src: 'promotional/556985230_17878417377408281_7902038721754815353_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
   {
-    src: '/promotional/560187497_2430155280719411_2702740611496462921_n.jpg',
+    src: 'promotional/560187497_2430155280719411_2702740611496462921_n.jpg',
     alt: "Rocky's Cafe promotional photo.",
   },
 ] as const

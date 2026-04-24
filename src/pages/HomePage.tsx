@@ -49,7 +49,7 @@ export function HomePage() {
 
                 {heroPhoto ? (
                     <figure className="landing-hero-photo">
-                        <img src={heroPhoto.src} alt={heroPhoto.alt} />
+                        <img src={import.meta.env.BASE_URL + heroPhoto.src} alt={heroPhoto.alt} />
                         <figcaption>Rocky&apos;s Cafe storefront setup</figcaption>
                     </figure>
                 ) : null}
@@ -117,7 +117,7 @@ export function HomePage() {
                                 index % 2 === 0 ? 'tilt-left' : 'tilt-right'
                             }`}
                         >
-                            <img src={image.src} alt={image.alt} loading="lazy" />
+                            <img src={import.meta.env.BASE_URL + image.src} alt={image.alt} loading="lazy" />
                         </figure>
                     ))}
                 </div>

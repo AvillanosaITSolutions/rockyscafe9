@@ -12,7 +12,7 @@ function App() {
           <div className="site-nav-row">
             <NavLink to="/" className="brand-name">
               <img
-                src={cafeDetails.logoPath}
+                src={import.meta.env.BASE_URL + cafeDetails.logoPath}
                 alt="Rocky's Cafe logo"
                 className="brand-logo"
               />
