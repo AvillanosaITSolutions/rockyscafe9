@@ -113,9 +113,8 @@ export function HomePage() {
                     {promotionalGallery.map((image, index) => (
                         <figure
                             key={image.src}
-                            className={`gallery-card ${
-                                index % 2 === 0 ? 'tilt-left' : 'tilt-right'
-                            }`}
+                            className={`gallery-card ${index % 2 === 0 ? 'tilt-left' : 'tilt-right'
+                                }`}
                         >
                             <img src={import.meta.env.BASE_URL + image.src} alt={image.alt} loading="lazy" />
                         </figure>
