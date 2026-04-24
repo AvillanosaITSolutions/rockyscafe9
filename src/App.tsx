@@ -5,7 +5,7 @@ import { MenuPage } from './pages/MenuPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="site-shell">
         <header className="site-header">
           <p className="brand-kicker">San Pedro, Laguna</p>
