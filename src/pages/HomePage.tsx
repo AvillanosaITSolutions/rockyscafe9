@@ -1,9 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { QRCodeSVG } from 'qrcode.react'
 import { cafeDetails, promotionalGallery } from '../data/cafeDetails'
+import { Lightbox } from '../components/Lightbox'
 
 export function HomePage() {
     const heroPhoto = promotionalGallery[0]
+    const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
     useEffect(() => {
         const cards = document.querySelectorAll<HTMLElement>('.gallery-card')
@@ -25,6 +28,8 @@ export function HomePage() {
 
         return () => observer.disconnect()
     }, [])
+
+    const menuUrl = `${window.location.origin}${import.meta.env.BASE_URL}menu`
 
     return (
         <>
@@ -104,6 +109,29 @@ export function HomePage() {
                 </div>
             </section>
 
+            <section className="qr-section reveal-up">
+                <div className="qr-copy">
+                    <p className="hero-eyebrow">Quick Access</p>
+                    <h2 className="qr-title">Scan to View Our Menu</h2>
+                    <p className="qr-sub">Point your camera at the code to browse Rocky&apos;s Cafe full menu on any device.</p>
+                    <Link to="/menu" className="btn btn-primary">
+                        Open Menu
+                    </Link>
+                </div>
+                <div className="qr-frame">
+                    <div className="qr-inner">
+                        <QRCodeSVG
+                            value={menuUrl}
+                            size={180}
+                            bgColor="transparent"
+                            fgColor="#3d2010"
+                            level="M"
+                        />
+                    </div>
+                    <p className="qr-url">{menuUrl}</p>
+                </div>
+            </section>
+
             <section className="gallery reveal-up delay-2">
                 <div className="gallery-head">
                     <h2>Storefront Gallery</h2>
@@ -113,14 +141,16 @@ export function HomePage() {
                     {promotionalGallery.map((image, index) => (
                         <figure
                             key={image.src}
-                            className={`gallery-card ${index % 2 === 0 ? 'tilt-left' : 'tilt-right'
-                                }`}
+                            className={`gallery-card ${index % 2 === 0 ? 'tilt-left' : 'tilt-right'} lightbox-trigger`}
+                            onClick={() => setLightbox({ src: import.meta.env.BASE_URL + image.src, alt: image.alt })}
                         >
                             <img src={import.meta.env.BASE_URL + image.src} alt={image.alt} loading="lazy" />
                         </figure>
                     ))}
                 </div>
             </section>
+
+            {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
             <section className="social-strip reveal-up">
                 <a href={cafeDetails.instagramUrl} target="_blank" rel="noreferrer">
