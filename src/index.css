@@ -186,8 +186,13 @@ main {
   letter-spacing: 0.04em;
 }
 
+.home-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .landing-highlights {
-  margin-top: 0.95rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
@@ -282,7 +287,6 @@ main {
 }
 
 .details-grid {
-  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
@@ -321,7 +325,6 @@ main {
 }
 
 .services {
-  margin-top: 0.95rem;
   border: 1px solid var(--border);
   border-radius: 20px;
   background: #fff9f2;
@@ -329,7 +332,6 @@ main {
 }
 
 .gallery {
-  margin-top: 0.95rem;
   border: 1px solid var(--border);
   border-radius: 20px;
   background: linear-gradient(140deg, rgba(255, 248, 238, 0.92), rgba(255, 237, 213, 0.82));
@@ -422,7 +424,6 @@ main {
 }
 
 .social-strip {
-  margin-top: 0.95rem;
   border-radius: 18px;
   border: 1px solid rgba(89, 47, 25, 0.2);
   background: linear-gradient(90deg, #f8e4cc, #f5d7b9);
@@ -903,6 +904,78 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ── Rent Teaser (Homepage) ─────────────────────────────── */
+.rent-teaser {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(78, 42, 24, 0.2);
+  box-shadow: 0 8px 32px rgba(42, 22, 11, 0.18);
+  background: linear-gradient(120deg, #5f341d, #8a4e2a);
+}
+
+.rent-teaser-photo {
+  margin: 0;
+  overflow: hidden;
+  min-height: 240px;
+}
+
+.rent-teaser-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.88;
+  transition: transform 0.5s ease;
+}
+
+.rent-teaser:hover .rent-teaser-photo img {
+  transform: scale(1.04);
+}
+
+.rent-teaser-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 2rem 1.8rem;
+}
+
+.rent-teaser-copy .hero-eyebrow {
+  color: rgba(255, 210, 140, 0.8);
+}
+
+.rent-teaser-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  font-weight: 700;
+  color: #fff8ef;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.rent-teaser-sub {
+  font-size: 0.95rem;
+  color: rgba(255, 235, 200, 0.82);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 38ch;
+}
+
+.rent-teaser-copy .btn-primary {
+  background: #fff8ef;
+  color: #5f341d;
+  align-self: flex-start;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rent-teaser-copy .btn-primary:hover {
+  background: #fff3e4;
 }
 
 /* ── Rent Page ──────────────────────────────────────────── */
@@ -1404,6 +1477,14 @@ main {
 
   .rent-hero {
     grid-template-columns: 1fr;
+  }
+
+  .rent-teaser {
+    grid-template-columns: 1fr;
+  }
+
+  .rent-teaser-photo {
+    min-height: 200px;
   }
 
   .rent-packages-grid {

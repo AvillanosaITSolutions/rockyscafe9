@@ -130,8 +130,42 @@ export function RentPage() {
                 </button>
             </div>
 
+            {/* ── Package Sheet Gallery ── */}
+            <section className="rent-sheets reveal-up delay-1">
+                <div className="rent-sheets-head">
+                    <p className="hero-eyebrow">Package Details</p>
+                    <h2>See the Full Breakdown</h2>
+                    <p>Tap any image to view the full package sheet.</p>
+                </div>
+                <div className="rent-sheets-grid">
+                    {packageSheets.map((sheet, i) => (
+                        <figure
+                            key={sheet.file}
+                            className="rent-sheet-card lightbox-trigger"
+                            ref={(el) => {
+                                cardRefs.current[packages.length + i] = el
+                            }}
+                            style={{ '--delay': `${i * 100}ms` } as React.CSSProperties}
+                            onClick={() =>
+                                setLightbox({
+                                    src: import.meta.env.BASE_URL + sheet.file,
+                                    alt: sheet.label,
+                                })
+                            }
+                        >
+                            <img
+                                src={import.meta.env.BASE_URL + sheet.file}
+                                alt={sheet.label}
+                                loading="lazy"
+                            />
+                            <figcaption>{sheet.label}</figcaption>
+                        </figure>
+                    ))}
+                </div>
+            </section>
+
             {/* ── Packages ── */}
-            <section className="rent-packages reveal-up delay-1">
+            <section className="rent-packages reveal-up delay-2">
                 <div className="rent-packages-head">
                     <p className="hero-eyebrow">Our Packages</p>
                     <h2 className="rent-packages-title">Choose Your Setup</h2>
@@ -173,40 +207,6 @@ export function RentPage() {
                                 Book This Package
                             </button>
                         </article>
-                    ))}
-                </div>
-            </section>
-
-            {/* ── Package Sheet Gallery ── */}
-            <section className="rent-sheets reveal-up delay-2">
-                <div className="rent-sheets-head">
-                    <p className="hero-eyebrow">Package Details</p>
-                    <h2>See the Full Breakdown</h2>
-                    <p>Tap any image to view the full package sheet.</p>
-                </div>
-                <div className="rent-sheets-grid">
-                    {packageSheets.map((sheet, i) => (
-                        <figure
-                            key={sheet.file}
-                            className="rent-sheet-card lightbox-trigger"
-                            ref={(el) => {
-                                cardRefs.current[packages.length + i] = el
-                            }}
-                            style={{ '--delay': `${i * 100}ms` } as React.CSSProperties}
-                            onClick={() =>
-                                setLightbox({
-                                    src: import.meta.env.BASE_URL + sheet.file,
-                                    alt: sheet.label,
-                                })
-                            }
-                        >
-                            <img
-                                src={import.meta.env.BASE_URL + sheet.file}
-                                alt={sheet.label}
-                                loading="lazy"
-                            />
-                            <figcaption>{sheet.label}</figcaption>
-                        </figure>
                     ))}
                 </div>
             </section>

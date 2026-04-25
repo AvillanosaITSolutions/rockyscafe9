@@ -32,7 +32,7 @@ export function HomePage() {
     const menuUrl = `${window.location.origin}${import.meta.env.BASE_URL}menu`
 
     return (
-        <>
+        <div className="home-stack">
             <section className="landing-hero fade-in">
                 <div className="landing-hero-copy">
                     <p className="hero-eyebrow">rockyscafe9</p>
@@ -132,6 +132,18 @@ export function HomePage() {
                 </div>
             </section>
 
+            <section className="rent-teaser reveal-up delay-1">
+                <figure className="rent-teaser-photo">
+                    <img src={import.meta.env.BASE_URL + 'rent/1.jpg'} alt="Rocky's Cafe coffee cart rental" />
+                </figure>
+                <div className="rent-teaser-copy">
+                    <p className="hero-eyebrow">Coffee Cart Rental</p>
+                    <h2 className="rent-teaser-title">Bring Rocky&apos;s Cafe<br />to Your Event.</h2>
+                    <p className="rent-teaser-sub">Available for birthdays, weddings, corporate events, and more. 10% off for all bookings.</p>
+                    <Link to="/rent" className="btn btn-primary">See Packages & Book</Link>
+                </div>
+            </section>
+
             <section className="gallery reveal-up delay-2">
                 <div className="gallery-head">
                     <h2>Storefront Gallery</h2>
@@ -161,6 +173,6 @@ export function HomePage() {
                 </a>
                 <a href={cafeDetails.phoneLink}>Call Now</a>
             </section>
-        </>
+        </div>
     )
 }
