@@ -1,4 +1,4 @@
-import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { cafeDetails } from './data/cafeDetails'
 import { HomePage } from './pages/HomePage'
 import { MenuPage } from './pages/MenuPage'
