@@ -2,6 +2,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { cafeDetails } from './data/cafeDetails'
 import { HomePage } from './pages/HomePage'
 import { MenuPage } from './pages/MenuPage'
+import { RentPage } from './pages/RentPage'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 Home
               </NavLink>
               <NavLink to="/menu">Online Menu</NavLink>
+              <NavLink to="/rent">Rent a Cart</NavLink>
             </nav>
           </div>
         </header>
@@ -31,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/menu" element={<MenuPage />} />
+            <Route path="/rent" element={<RentPage />} />
           </Routes>
         </main>
 
