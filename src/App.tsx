@@ -1,12 +1,14 @@
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { cafeDetails } from './data/cafeDetails'
 import { HomePage } from './pages/HomePage'
 import { MenuPage } from './pages/MenuPage'
 import { RentPage } from './pages/RentPage'
+import { ScrollToTop } from './components/ScrollToTop'
 
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
       <div className="site-shell">
         <header className="site-header">
           <p className="brand-kicker">San Pedro, Laguna</p>
