@@ -250,7 +250,15 @@ export function RentPage() {
                         </p>
                         <div className="book-modal-contacts">
                             <a
-                                href={`mailto:${cafeDetails.email}?subject=Coffee Cart Booking – ${bookModal}`}
+                                href={(() => {
+                                    const subject = bookModal === 'General Inquiry'
+                                        ? 'Coffee Cart Rental Inquiry – Rocky\'s Cafe'
+                                        : `Coffee Cart Booking – ${bookModal}`
+                                    const body = bookModal === 'General Inquiry'
+                                        ? `Hi Rocky's Cafe,\n\nI'm interested in renting your coffee cart for an event. Please let me know your availability.\n\nEvent details:\n- Date:\n- Venue:\n- Number of guests:\n\nThank you!`
+                                        : `Hi Rocky's Cafe,\n\nI'd like to book the ${bookModal} package for my event.\n\nEvent details:\n- Date:\n- Venue:\n- Number of guests:\n\nThank you!`
+                                    return `mailto:${cafeDetails.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+                                })()}
                                 className="book-contact-row"
                             >
                                 <span className="book-contact-icon" aria-hidden="true">✉</span>
@@ -259,10 +267,25 @@ export function RentPage() {
                                     <em>{cafeDetails.email}</em>
                                 </span>
                             </a>
+                            <a
+                                href={(() => {
+                                    const body = bookModal === 'General Inquiry'
+                                        ? `Hi Rocky's Cafe! I'm interested in renting your coffee cart. Please let me know your availability. Event date: , Venue: , Guests: `
+                                        : `Hi Rocky's Cafe! I'd like to book the ${bookModal} package. Event date: , Venue: , Guests: `
+                                    return `sms:${cafeDetails.phoneInternational}?body=${encodeURIComponent(body)}`
+                                })()}
+                                className="book-contact-row"
+                            >
+                                <span className="book-contact-icon" aria-hidden="true">💬</span>
+                                <span>
+                                    <strong>Text / SMS</strong>
+                                    <em>{cafeDetails.phoneDisplay}</em>
+                                </span>
+                            </a>
                             <a href={cafeDetails.phoneLink} className="book-contact-row">
                                 <span className="book-contact-icon" aria-hidden="true">📞</span>
                                 <span>
-                                    <strong>Call / Text</strong>
+                                    <strong>Call</strong>
                                     <em>{cafeDetails.phoneDisplay}</em>
                                 </span>
                             </a>
